@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-inverse ">
+  <a class="navbar-brand" href="#">Nain</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item" [class.active]="getLinkStyle('')">
+      <a class="nav-link" [router-link]="['/Home']"class="link">Home</a>
+    </li>
+    <li class="nav-item" [class.active]="getLinkStyle('/about')">
+      <a class="nav-link" [router-link]="['/About']" class="link">About</a>
+    </li>
+    <li class="nav-item" [class.active]="getLinkStyle('/heroes')">
+      <a class="nav-link" [router-link]="['/Heroes']" class="link">Heroes</a>
+    </li>
+    <li class="nav-item" [class.active]="getLinkStyle('/github')">
+      <a class="nav-link" [router-link]="['/Github']" class="link">Github</a>
+    </li>
+  </ul>
+</nav>
+<div class="jumbotron jumbotron-fluid bg-inverse">
+  <div class="container">
+    <span class="label label-default">Eslem's</span>
+    <h1>{{title}} 
+      <made-with *ng-if="!getLinkStyle('')">  </made-with>
+    </h1> 
+  </div>
+</div>

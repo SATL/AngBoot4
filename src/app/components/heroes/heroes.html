@@ -1,0 +1,29 @@
+<div class="container-fluid">	
+	<div class="col-md-6 col-lg-3">
+		<ul class="list-group heroes">
+			<li class="list-group-item" *ng-for="#hero of heroes" (click)="onSelect(hero)" [ng-class]="getSelectedClass(hero)">
+				<span class="label label-default">{{hero.id}}</span> {{hero.name}}</a>
+			</li>
+		</ul>
+	</div>
+	<div class="col-md-6 col-lg-2" >
+		<div *ng-if="selectedHero">
+			<h2>{{selectedHero.name}} details!</h2>
+			<div>
+				<label>
+					<span class="label label-default">id: </span>
+					{{selectedHero.id}}</label>
+				</div>
+				<div>
+					<label><span class="label label-default">name:</span> {{selectedHero.name}}</label></br>
+					<div><input [(ng-model)]="selectedHero.name" placeholder="name" class="form-control"></div>
+				</div>
+			</div>
+		</div>
+
+		<div *ng-if="!selectedHero">
+			<h3>No Hero selected</h3>
+		</div>
+		
+	</div>
+</div>
